@@ -6,7 +6,11 @@
  */
 
 // CODE HERE
-
+var me = {
+  firstname: "Mykenzie",
+  age: 20,
+  state: "Texas"
+}
 /**
  * #2
  *
@@ -15,7 +19,7 @@
  */
 
 // CODE HERE
-
+me.faveColor = "purple";
 /**
  * #3
  *
@@ -30,7 +34,7 @@ var message = {
 };
 // DON'T TOUCH THE CODE ABOVE
 // CODE HERE
-
+message["text"] = "The cake is a lie."
 /**
  * #4
  *
@@ -40,7 +44,14 @@ var message = {
  */
 
 // CODE HERE
-
+var adjustCount = {
+  upVote: function(num) {
+    return num+1;
+  },
+  downVote: function(num) {
+    return num-1;
+  }
+}
 /**
  * #5
  *
@@ -48,7 +59,7 @@ var message = {
  */
 
 // CODE HERE
-
+var myFriends = ["Omar", "Luis", "John", "Sean"];
 /**
  * #6
  *
@@ -56,7 +67,7 @@ var message = {
  */
 
 // CODE HERE
-
+myFriends[4] = "Durin";
 /**
  * #7
  *
@@ -68,7 +79,7 @@ var message = {
 var myArray = [1, 2, 3, 4];
 // DON'T TOUCH THE CODE ABOVE
 // CODE HERE
-
+var myArrayCopy = myArray.slice();
 /**
  * #8
  *
@@ -80,7 +91,15 @@ var myArray = [1, 2, 3, 4];
 var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 //DON'T TOUCH THE CODE ABOVE
 function evensOnly() {
-  // CODE HERE
+  var arr = [];
+  var index = 0;
+  for(var i = 0; i < myNumbers.length; i++) {
+    if(myNumbers[i] % 2 === 0) {
+      arr[index] = myNumbers[i];
+      index++;
+    }
+  }
+  return arr;
 }
 
 /**
@@ -99,7 +118,13 @@ var peopleIknow = [
   { name: "Michelle", friend: false },
   { name: "Holly", friend: true }
 ];
-
+var trueFriends = peopleIknow.filter(function(val, i, arr) {
+  if(val.friend === true) {
+    return true;
+  } else {
+    return false;
+  }
+})
 /**
  * #10
  *
@@ -110,3 +135,11 @@ var peopleIknow = [
  */
 
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+function indexFinder(arr) {
+  var temp = [];
+  for(var i = 0; i < arr.length; i++) {
+    temp[i] = i;
+  }
+  return temp
+}
+var indexes = indexFinder(randomNumbers);
